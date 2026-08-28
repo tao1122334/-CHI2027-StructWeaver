@@ -1,0 +1,904 @@
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkh{\"a}user" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+
+%%%%%%%%%%%%%%%%%%% 2.Related Work  %%%%%%%%%%%%%%%%%%%
+@inproceedings{head2021augmentingscientificpapersjustintime,
+    author = {Head, Andrew and Lo, Kyle and Kang, Dongyeop and Fok, Raymond and Skjonsberg, Sam and Weld, Daniel S. and Hearst, Marti A.},
+    title = {Augmenting Scientific Papers with Just-in-Time, Position-Sensitive Definitions of Terms and Symbols},
+    year = {2021},
+    isbn = {9781450380966},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    doi = {https://doi.org/10.1145/3411764.3445648},
+    booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
+}
+
+@article{august2022paperplainmakingmedical,
+    author = {August, Tal and Wang, Lucy Lu and Bragg, Jonathan and Hearst, Marti A. and Head, Andrew and Lo, Kyle},
+    title = {Paper Plain: Making Medical Research Papers Approachable to Healthcare Consumers with Natural Language Processing},
+    year = {2023},
+    issue_date = {October 2023},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {30},
+    number = {5},
+    issn = {1073-0516},
+    doi = {https://doi.org/10.1145/3589955},
+    journal = {ACM Trans. Comput.-Hum. Interact.},
+}
+
+@misc{gunturu2024realitysummaryexploringondemandmixed,
+      title={RealitySummary: Exploring On-Demand Mixed Reality Text Summarization and Question Answering using Large Language Models}, 
+      author={Aditya Gunturu and Shivesh Jadon and Nandi Zhang and Morteza Faraji and Jarin Thundathil and Tafreed Ahmad and Wesley Willett and Ryo Suzuki},
+      year={2024},
+      eprint={2405.18620},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      doi={https://doi.org/10.48550/arXiv.2405.18620}, 
+}
+
+@misc{lo2023semanticreaderprojectaugmenting,
+      title={The Semantic Reader Project: Augmenting Scholarly Documents through AI-Powered Interactive Reading Interfaces}, 
+      author={Kyle Lo and Joseph Chee Chang and Andrew Head and Jonathan Bragg and Amy X. Zhang and Cassidy Trier and Chloe Anastasiades and Tal August and Russell Authur and Danielle Bragg and Erin Bransom and Isabel Cachola and Stefan Candra and Yoganand Chandrasekhar and Yen-Sung Chen and Evie Yu-Yen Cheng and Yvonne Chou and Doug Downey and Rob Evans and Raymond Fok and Fangzhou Hu and Regan Huff and Dongyeop Kang and Tae Soo Kim and Rodney Kinney and Aniket Kittur and Hyeonsu Kang and Egor Klevak and Bailey Kuehl and Michael Langan and Matt Latzke and Jaron Lochner and Kelsey MacMillan and Eric Marsh and Tyler Murray and Aakanksha Naik and Ngoc-Uyen Nguyen and Srishti Palani and Soya Park and Caroline Paulic and Napol Rachatasumrit and Smita Rao and Paul Sayre and Zejiang Shen and Pao Siangliulue and Luca Soldaini and Huy Tran and Madeleine van Zuylen and Lucy Lu Wang and Christopher Wilhelm and Caroline Wu and Jiangjiang Yang and Angele Zamarron and Marti A. Hearst and Daniel S. Weld},
+      year={2023},
+      eprint={2303.14334},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      doi={https://doi.org/10.48550/arXiv.2303.14334}, 
+}
+
+@ARTICLE{allen1999mixed,
+  author={Allen, J.E. and Guinn, C.I. and Horvtz, E.},
+  journal={IEEE Intelligent Systems and their Applications}, 
+  title={Mixed-initiative interaction}, 
+  year={1999},
+  volume={14},
+  number={5},
+  pages={14-23},
+  doi={https://doi.org/10.1109/5254.796083}
+}
+
+@article{pitre2024argumentor,
+  title={ArguMentor: Augmenting User Experiences with Counter-Perspectives},
+  author={Pitre, Priya and Luther, Kurt},
+  journal={arXiv preprint arXiv:2406.02795},
+  year={2024},
+  doi={https://doi.org/10.48550/arXiv.2406.02795}
+}
+
+@inproceedings{Synergi,
+author = {Kang, Hyeonsu B and Wu, Tongshuang and Chang, Joseph Chee and Kittur, Aniket},
+title = {Synergi: A Mixed-Initiative System for Scholarly Synthesis and Sensemaking},
+year = {2023},
+isbn = {9798400701320},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3586183.3606759},
+doi = {10.1145/3586183.3606759},
+booktitle = {Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology},
+articleno = {43},
+numpages = {19},
+location = {San Francisco, CA, USA},
+series = {UIST '23}
+}
+
+@inproceedings{Zamfirescu-Pereira,
+    author = {Zamfirescu-Pereira, J.D. and Wong, Richmond Y. and Hartmann, Bjoern and Yang, Qian},
+    title = {Why Johnny Can't Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts},
+    year = {2023},
+    isbn = {9781450394215},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    doi = {10.1145/3544548.3581388},
+    booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
+    series = {CHI '23},
+    pages = {1--21},
+}
+
+@article{marois2005capacity,
+  title={Capacity limits of information processing in the brain},
+  author={Marois, Ren{\'e} and Ivanoff, Jason},
+  journal={Trends in cognitive sciences},
+  volume={9},
+  number={6},
+  pages={296--305},
+  year={2005},
+  publisher={Elsevier},
+  doi={https://doi.org/10.1016/j.tics.2005.04.010}
+}
+
+@book{klingberg2009overflowing,
+  title={The overflowing brain: Information overload and the limits of working memory},
+  author={Klingberg, Torkel},
+  year={2009},
+  publisher={Oxford University Press},
+  doi={https://doi.org/10.1093/oso/9780195372885.001.0001}
+}
+
+
+@article{thuring1995hypermedia,
+  title={Hypermedia and cognition: Designing for comprehension},
+  author={Th{\"u}ring, Manfred and Hannemann, J{\"o}rg and Haake, J{\"o}rg M},
+  journal={Communications of the ACM},
+  volume={38},
+  number={8},
+  pages={57--66},
+  year={1995},
+  publisher={ACM New York, NY, USA},
+}
+
+@article{lin2005recall,
+  title={Recall-oriented understudy for gisting evaluation (rouge)},
+  author={Lin, C},
+  journal={Retrieved August},
+  volume={20},
+  pages={2005},
+  year={2005}
+}
+
+@misc{zhou2026improvinghumanverificationllm,
+      title={Improving Human Verification of LLM Reasoning through Interactive Explanation Interfaces}, 
+      author={Runtao Zhou and Giang Nguyen and Nikita Kharya and Anh Totti Nguyen and Chirag Agarwal},
+      year={2026},
+      eprint={2510.22922},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2510.22922}, 
+}
+
+@misc{zhang2025blackboxdemystifyingmultiturn,
+      title={Beyond the Black Box: Demystifying Multi-Turn LLM Reasoning with VISTA}, 
+      author={Yiran Zhang and Mingyang Lin and Mark Dras and Usman Naseem},
+      year={2025},
+      eprint={2511.10182},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2511.10182}, 
+}
+
+@inproceedings{li-etal-2025-reasongraph,
+    title = "{R}eason{G}raph: Visualization of Reasoning Methods and Extended Inference Paths",
+    author = "Li, Zongqian  and
+      Shareghi, Ehsan  and
+      Collier, Nigel",
+    editor = "Mishra, Pushkar  and
+      Muresan, Smaranda  and
+      Yu, Tao",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-demo.14/",
+    doi = "10.18653/v1/2025.acl-demo.14",
+    pages = "140--147",
+    ISBN = "979-8-89176-253-4",
+    abstract = "Large Language Models (LLMs) reasoning processes are challenging to analyze due to their complexity and the lack of organized visualization tools. We present ReasonGraph, a web-based platform for visualizing and analyzing LLM reasoning processes. It supports both sequential and tree-based reasoning methods and extended inference outputs while integrating with major LLM providers and over fifty state-of-the-art models. ReasonGraph incorporates an intuitive UI with meta reasoning method selection, configurable visualization parameters, and a modular framework that facilitates efficient extension. Our evaluation shows high parsing reliability, efficient processing, and excellent usability across various downstream applications. By providing a unified visualization framework, ReasonGraph reduces cognitive load in analyzing complex reasoning paths, improves error identification in logical processes, and enables more effective development of LLM-based applications. The platform is open-source, facilitating accessibility and reproducibility in LLM reasoning analysis."
+}
+
+@misc{flowise,
+  title = {Flowise: Open-Source LLM Workflow Orchestration Tool},
+  author = {{FlowiseAI}},
+  howpublished = {\url{https://github.com/FlowiseAI/Flowise}},
+  note = {Accessed: 2026-02-09}
+}
+
+@misc{langflow,
+  title = {LangFlow: Visual Framework for Building LLM Applications},
+  author = {{Langflow-AI}},
+  howpublished = {\url{https://github.com/langflow-ai/langflow}},
+  note = {Accessed: 2026-02-09}
+}
+
+@misc{anthropic_structured_outputs,
+  author = {{Anthropic}},
+  title = {Structured Outputs},
+  howpublished = {\url{https://platform.claude.com/docs/en/build-with-claude/structured-outputs}},
+  note = {Accessed: 2026-02-09}
+}
+
+
+@misc{openai_code_interpreter,
+  author = {{OpenAI}},
+  title = {Code Interpreter Tool Guide},
+  howpublished = {\url{https://platform.openai.com/docs/guides/tools-code-interpreter}},
+  note = {Accessed: 2026-02-09}
+}
+
+@misc{lobehub,
+  author = {{LobeHub}},
+  title = {LobeHub: Open-Source AI Agent and Chat Platform},
+  howpublished = {\url{https://github.com/lobehub/lobehub}},
+  note = {Accessed: 2026-02-09}
+}
+
+@article{PEER202137,
+title = {Structuring Knowledge with Cognitive Maps and Cognitive Graphs},
+journal = {Trends in Cognitive Sciences},
+volume = {25},
+number = {1},
+pages = {37-54},
+year = {2021},
+issn = {1364-6613},
+doi = {https://doi.org/10.1016/j.tics.2020.10.004},
+url = {https://www.sciencedirect.com/science/article/pii/S1364661320302503},
+author = {Michael Peer and Iva K. Brunec and Nora S. Newcombe and Russell A. Epstein},
+keywords = {spatial navigation, memory, semantic knowledge, hippocampus, visual scenes, grid cells, retrosplenial complex},
+}
+
+@article{DWYER201016,
+title = {The evaluation of argument mapping as a learning tool: Comparing the effects of map reading versus text reading on comprehension and recall of arguments},
+journal = {Thinking Skills and Creativity},
+volume = {5},
+number = {1},
+pages = {16-22},
+year = {2010},
+issn = {1871-1871},
+doi = {https://doi.org/10.1016/j.tsc.2009.05.001},
+url = {https://www.sciencedirect.com/science/article/pii/S1871187109000224},
+author = {Christopher P. Dwyer and Michael J. Hogan and Ian Stewart},
+keywords = {Argument mapping, Memory, Comprehension, Reasoning, Thinking, Cognitive load, Argumentation},
+}
+
+@ARTICLE{A_Survey_on_Knowledge_Graphs,
+  author={Ji, Shaoxiong and Pan, Shirui and Cambria, Erik and Marttinen, Pekka and Yu, Philip S.},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={A Survey on Knowledge Graphs: Representation, Acquisition, and Applications}, 
+  year={2022},
+  volume={33},
+  number={2},
+  pages={494-514},
+  keywords={Cognition;Knowledge based systems;Semantics;Knowledge acquisition;Task analysis;Taxonomy;Extraterrestrial measurements;Deep learning;knowledge graph completion (KGC);knowledge graph;reasoning;relation extraction;representation learning},
+  doi={10.1109/TNNLS.2021.3070843}}
+
+@inproceedings{hanel2024,
+author = {Hänel, Martin and Wambsganß, Thiemo and Söllner, Matthias},
+year = {2024},
+month = {06},
+pages = {},
+title = {Towards Effective AI-Driven Reading Assistants: A Design Science Exploration}
+}
+
+@inproceedings{Hsu2026,
+author = {Hsu, Shang-Fang and Yang, Chia-Han and Shidujaman, Mohammad},
+title = {Exploring How Generative AI Enhances Information Comprehension},
+year = {2026},
+isbn = {978-3-032-12384-8},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+url = {https://doi.org/10.1007/978-3-032-12385-5_17},
+doi = {10.1007/978-3-032-12385-5_17},
+booktitle = {HCI International 2025 – Late Breaking Papers: 27th International Conference on Human-Computer Interaction, HCII 2025, Gothenburg, Sweden, June 22–27, 2025, Proceedings, Part II},
+pages = {277–294},
+numpages = {18},
+keywords = {Generative Artificial Intelligence, reading comprehension, SCISPACE, ChatGPT, personalized learning},
+location = {Gothenburg, Sweden}
+}
+
+@inproceedings{yang2017hitext,
+    author = {Yang, Qian and de Melo, Gerard and Cheng, Yong and Wang, Sen},
+    title = {HiText: Text Reading with Dynamic Salience Marking},
+    year = {2017},
+    isbn = {9781450349147},
+    publisher = {International World Wide Web Conferences Steering Committee},
+    address = {Republic and Canton of Geneva, CHE},
+    doi = {https://doi.org/10.1145/3041021.3054168},
+    booktitle = {Proceedings of the International Conference on World Wide Web Companion},
+    pages = {311–319},
+}
+
+@inproceedings{10.1145/3532106.3533457,
+author = {Cai, Tianyuan and Wallace, Shaun and Rezvanian, Tina and Dobres, Jonathan and Kerr, Bernard and Berlow, Samuel and Huang, Jeff and Sawyer, Ben D. and Bylinskii, Zoya},
+title = {Personalized Font Recommendations: Combining ML and Typographic Guidelines to Optimize Readability},
+year = {2022},
+isbn = {9781450393584},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3532106.3533457},
+doi = {10.1145/3532106.3533457},
+booktitle = {Proceedings of the 2022 ACM Designing Interactive Systems Conference},
+pages = {1–25},
+numpages = {25},
+keywords = {personalization, readability, reading, typography},
+location = {Virtual Event, Australia},
+series = {DIS '22}
+}
+
+@inproceedings{10.1145/2598153.2600056,
+author = {Wecker, Alan J. and Lanir, Joel and Mokryn, Osnat and Minkov, Einat and Kuflik, Tsvi},
+title = {Semantize: visualizing the sentiment of individual document},
+year = {2014},
+isbn = {9781450327756},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2598153.2600056},
+doi = {10.1145/2598153.2600056},
+booktitle = {Proceedings of the 2014 International Working Conference on Advanced Visual Interfaces},
+pages = {385–386},
+numpages = {2},
+keywords = {sentiment analysis, user interface, visualization},
+location = {Como, Italy},
+series = {AVI '14}
+}
+
+@misc{kambhamettu2024traceabletextdeepeningreading,
+      title={Traceable Text: Deepening Reading of AI-Generated Summaries with Phrase-Level Provenance Links}, 
+      author={Hita Kambhamettu and Jamie Flores and Andrew Head},
+      year={2024},
+      eprint={2409.13099},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2409.13099}, 
+}
+
+@misc{gu2024airesilienttextrenderingtechnique,
+      title={An AI-Resilient Text Rendering Technique for Reading and Skimming Documents}, 
+      author={Ziwei Gu and Ian Arawjo and Kenneth Li and Jonathan K. Kummerfeld and Elena L. Glassman},
+      year={2024},
+      eprint={2401.10873},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2401.10873}, 
+}
+
+@inproceedings{Richards2023reader,
+author = {Richards Maldonado, Liam and Abouzied, Azza and Gleason, Nancy W.},
+title = {ReaderQuizzer: Augmenting Research Papers with Just-In-Time Learning Questions to Facilitate Deeper Understanding},
+year = {2023},
+isbn = {9798400701290},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3584931.3607494},
+booktitle = {Companion Publication of the 2023 Conference on Computer Supported Cooperative Work and Social Computing},
+pages = {391–394},
+numpages = {4},
+keywords = {academic papers, augmented reading interfaces, reading comprehension},
+location = {Minneapolis, MN, USA},
+series = {CSCW '23 Companion}
+}
+
+@phdthesis{Tarr2019,
+  author    = {Jennifer Tarr},
+  title     = {Sources Of Missed Understanding: A Framework For Diagnosing Comprehension Breakdown},
+  school    = {National Louis University},
+  year      = {2019},
+  type      = {Dissertation},
+  number    = {402},
+  url       = {https://digitalcommons.nl.edu/diss/402}
+}
+
+@article{amenyo2025bridging,
+  title={Bridging Technology and Therapy: Assessing the Quality and Analyzing the Impact of Human Editing on AI-Generated SOAP Notes in Pediatric Rehabilitation},
+  author={Amenyo, Solomon},
+  year={2025},
+  publisher={University of Waterloo},
+  url= {https://hdl.handle.net/10012/21567}
+}
+
+@article{ma2025aimr,
+  title={AIMR-BRAINSTORM: AI-Enhanced Interactive Mixed Reality For Collaborative Ideation},
+  author={Ma, Yuchuan},
+  year={2025},
+  url={https://digitalcommons.dartmouth.edu/masters_theses/240}
+}
+
+@inproceedings{Fok_2023,
+    author = {Fok, Raymond and Kambhamettu, Hita and Soldaini, Luca and Bragg, Jonathan and Lo, Kyle and Hearst, Marti and Head, Andrew and Weld, Daniel S},
+    title = {Scim: Intelligent Skimming Support for Scientific Papers},
+    year = {2023},
+    isbn = {9798400701061},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    doi = {https://doi.org/10.1145/3581641.3584034},
+    booktitle = {Proceedings of the International Conference on Intelligent User Interfaces},
+    pages = {476–490},
+}
+
+@article{CHI1994439,
+    title = {Eliciting self-explanations improves understanding},
+    journal = {Cognitive Science},
+    volume = {18},
+    number = {3},
+    pages = {439-477},
+    year = {1994},
+    issn = {0364-0213},
+    doi = {https://doi.org/10.1016/0364-0213(94)90016-7},
+    author = {Michelene T.H. Chi and Nicholas {De Leeuw} and Mei-Hung Chiu and Christian Lavancher},
+}
+
+@article{chen2023marvistaexploringdesignhumanai,
+    author = {Chen, Xiang “Anthony” and Wu, Chien-Sheng and Murakhovs’ka, Lidiya and Laban, Philippe and Niu, Tong and Liu, Wenhao and Xiong, Caiming},
+    title = {Marvista: Exploring the Design of a Human-AI Collaborative News Reading Tool},
+    year = {2023},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {30},
+    number = {6},
+    issn = {1073-0516},
+    doi = {https://doi.org/10.1145/3609331},
+    journal = {ACM Trans. Comput.-Hum. Interact.},
+}
+@inproceedings{zhang2023concepteva,
+    author = {Zhang, Xiaoyu and Li, Jianping and Chi, Po-Wei and Chandrasegaran, Senthil and Ma, Kwan-Liu},
+    title = {ConceptEVA: Concept-Based Interactive Exploration and Customization of Document Summaries},
+    year = {2023},
+    isbn = {9781450394215},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    doi = {https://doi.org/10.1145/3544548.3581260},
+    booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
+}
+
+@inproceedings{10.1145/3586183.3606756,
+author = {Suh, Sangho and Min, Bryan and Palani, Srishti and Xia, Haijun},
+title = {Sensecape: Enabling Multilevel Exploration and Sensemaking with Large Language Models},
+year = {2023},
+isbn = {9798400701320},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3586183.3606756},
+doi = {10.1145/3586183.3606756},
+abstract = {People are increasingly turning to large language models (LLMs) for complex information tasks like academic research or planning a move to another city. However, while they often require working in a nonlinear manner — e.g., to arrange information spatially to organize and make sense of it, current interfaces for interacting with LLMs are generally linear to support conversational interaction. To address this limitation and explore how we can support LLM-powered exploration and sensemaking, we developed Sensecape, an interactive system designed to support complex information tasks with an LLM by enabling users to (1) manage the complexity of information through multilevel abstraction and (2) switch seamlessly between foraging and sensemaking. Our within-subject user study reveals that Sensecape empowers users to explore more topics and structure their knowledge hierarchically, thanks to the externalization of levels of abstraction. We contribute implications for LLM-based workflows and interfaces for information tasks.},
+booktitle = {Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology},
+articleno = {1},
+numpages = {18},
+keywords = {abstraction hierarchy, human-AI interaction, information seeking, large language models, levels of abstraction, multilevel exploration, sensemaking, systems thinking},
+location = {San Francisco, CA, USA},
+series = {UIST '23}
+}
+
+@incollection{sweller2011cognitive,
+  title={Cognitive load theory},
+  author={Sweller, John},
+  booktitle={Psychology of learning and motivation},
+  volume={55},
+  pages={37--76},
+  year={2011},
+  publisher={Elsevier}
+}
+
+
+@inproceedings{Jiang_2023,
+    author = {Jiang, Peiling and Rayan, Jude and Dow, Steven P. and Xia, Haijun},
+    title = {Graphologue: Exploring Large Language Model Responses with Interactive Diagrams},
+    year = {2023},
+    isbn = {9798400701320},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    doi = {https://doi.org/10.1145/3586183.3606737},
+    booktitle = {Proceedings of the Annual ACM Symposium on User Interface Software and Technology},
+}
+
+@misc{ping2017litstorytellerinteractivevisualexploration,
+      title={LitStoryTeller: An Interactive System for Visual Exploration of Scientific Papers Leveraging Named entities and Comparative Sentences}, 
+      author={Qing Ping and Chaomei Chen},
+      year={2017},
+      eprint={1708.02214},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      doi={https://doi.org/10.48550/arXiv.1708.02214}, 
+}
+
+@inproceedings{paranyushkin2019infranodus,
+    author = {Paranyushkin, Dmitry},
+    title = {InfraNodus: Generating Insight Using Text Network Analysis},
+    year = {2019},
+    isbn = {9781450366748},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    doi = {https://doi.org/10.1145/3308558.3314123},
+    booktitle = {The World Wide Web Conference},
+    pages = {3584–3589},
+    numpages = {6},
+}
+
+@inproceedings{10.1145/3526113.3545660,
+author = {Kang, Hyeonsu and Chang, Joseph Chee and Kim, Yongsung and Kittur, Aniket},
+title = {Threddy: An Interactive System for Personalized Thread-based Exploration and Organization of Scientific Literature},
+year = {2022},
+isbn = {9781450393201},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3526113.3545660},
+doi = {10.1145/3526113.3545660},
+booktitle = {Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology},
+articleno = {94},
+numpages = {15},
+location = {Bend, OR, USA},
+series = {UIST '22}
+}
+
+@inproceedings{10.1145/3313831.3376590,
+    author = {Liao, Q. Vera and Gruen, Daniel and Miller, Sarah},
+    title = {Questioning the AI: Informing Design Practices for Explainable AI User Experiences},
+    year = {2020},
+    isbn = {9781450367080},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    doi = {https://doi.org/10.1145/3313831.3376590},
+    booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
+    pages = {1–15},
+    numpages = {15},
+    }
+
+@misc{zhang2023readprobedemoretrievalenhancedlarge,
+      title={ReadProbe: A Demo of Retrieval-Enhanced Large Language Models to Support Lateral Reading}, 
+      author={Dake Zhang and Ronak Pradeep},
+      year={2023},
+      eprint={2306.07875},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2306.07875}, 
+}
+
+@inproceedings{10.1145/3613904.3641969,
+author = {Fok, Raymond and Lipka, Nedim and Sun, Tong and Siu, Alexa F},
+title = {Marco: Supporting Business Document Workflows via Collection-Centric Information Foraging with Large Language Models},
+year = {2024},
+isbn = {9798400703300},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3613904.3641969},
+doi = {10.1145/3613904.3641969},
+booktitle = {Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems},
+articleno = {842},
+numpages = {20},
+keywords = {business document workflows, document collections, large language models, mixed-initiative systems, sensemaking},
+location = {Honolulu, HI, USA},
+series = {CHI '24}
+}
+
+@misc{head2021augmentingscientificpapersjustintime,
+      title={Augmenting Scientific Papers with Just-in-Time, Position-Sensitive Definitions of Terms and Symbols}, 
+      author={Andrew Head and Kyle Lo and Dongyeop Kang and Raymond Fok and Sam Skjonsberg and Daniel S. Weld and Marti A. Hearst},
+      year={2021},
+      eprint={2009.14237},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2009.14237}, 
+}
+
+@misc{lo2023semanticreaderprojectaugmenting,
+      title={The Semantic Reader Project: Augmenting Scholarly Documents through AI-Powered Interactive Reading Interfaces}, 
+      author={Kyle Lo and Joseph Chee Chang and Andrew Head and Jonathan Bragg and Amy X. Zhang and Cassidy Trier and Chloe Anastasiades and Tal August and Russell Authur and Danielle Bragg and Erin Bransom and Isabel Cachola and Stefan Candra and Yoganand Chandrasekhar and Yen-Sung Chen and Evie Yu-Yen Cheng and Yvonne Chou and Doug Downey and Rob Evans and Raymond Fok and Fangzhou Hu and Regan Huff and Dongyeop Kang and Tae Soo Kim and Rodney Kinney and Aniket Kittur and Hyeonsu Kang and Egor Klevak and Bailey Kuehl and Michael Langan and Matt Latzke and Jaron Lochner and Kelsey MacMillan and Eric Marsh and Tyler Murray and Aakanksha Naik and Ngoc-Uyen Nguyen and Srishti Palani and Soya Park and Caroline Paulic and Napol Rachatasumrit and Smita Rao and Paul Sayre and Zejiang Shen and Pao Siangliulue and Luca Soldaini and Huy Tran and Madeleine van Zuylen and Lucy Lu Wang and Christopher Wilhelm and Caroline Wu and Jiangjiang Yang and Angele Zamarron and Marti A. Hearst and Daniel S. Weld},
+      year={2023},
+      eprint={2303.14334},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      doi={https://doi.org/10.48550/arXiv.2303.14334}, 
+}
+
+@inproceedings{10.1145/3613905.3636322,
+author = {Russell, Daniel M. and Koesten, Laura and Kittur, Aniket and Goyal, Nitesh and Liu, Michael Xieyang},
+title = {Sensemaking: What is it today?},
+year = {2024},
+isbn = {9798400703317},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3613905.3636322},
+doi = {10.1145/3613905.3636322},
+booktitle = {Extended Abstracts of the CHI Conference on Human Factors in Computing Systems},
+articleno = {487},
+numpages = {5},
+keywords = {generative ai, sensemaking},
+location = {Honolulu, HI, USA},
+series = {CHI EA '24}
+}
+
+@inproceedings{10.1145/169059.169209,
+author = {Russell, Daniel M. and Stefik, Mark J. and Pirolli, Peter and Card, Stuart K.},
+title = {The cost structure of sensemaking},
+year = {1993},
+isbn = {0897915755},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/169059.169209},
+doi = {10.1145/169059.169209},
+booktitle = {Proceedings of the INTERACT '93 and CHI '93 Conference on Human Factors in Computing Systems},
+pages = {269–276},
+numpages = {8},
+keywords = {cost structure, information access, learning loop, representation search, representation shift, sensemaking},
+location = {Amsterdam, The Netherlands},
+series = {CHI '93}
+}
+
+@inproceedings{naumer2008fisher,
+  title={fisher, Karen; dervin, Brenda (2008). Sense-making: a methodological perspective},
+  author={Naumer, Charles},
+  booktitle={Sensemaking workshop. ACM SIG CHI Conference},
+  year={2008}
+}
+
+@inproceedings{10.1145/3526113.3545693,
+author = {Kuznetsov, Andrew and Chang, Joseph Chee and Hahn, Nathan and Rachatasumrit, Napol and Breneisen, Bradley and Coupland, Julina and Kittur, Aniket},
+title = {Fuse: In-Situ Sensemaking Support in the Browser},
+year = {2022},
+isbn = {9781450393201},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3526113.3545693},
+doi = {10.1145/3526113.3545693},
+booktitle = {Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology},
+articleno = {34},
+numpages = {15},
+keywords = {In-Situ Systems, Mental Models, Sensemaking Support Systems},
+location = {Bend, OR, USA},
+series = {UIST '22}
+}
+
+@inproceedings{10.1145/3526113.3545667,
+author = {Horvath, Amber and Myers, Brad and Macvean, Andrew and Rahman, Imtiaz},
+title = {Using Annotations for Sensemaking About Code},
+year = {2022},
+isbn = {9781450393201},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3526113.3545667},
+doi = {10.1145/3526113.3545667},
+booktitle = {Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology},
+articleno = {61},
+numpages = {16},
+keywords = {Annotations, code comprehension, notetaking, sensemaking, software engineering},
+location = {Bend, OR, USA},
+series = {UIST '22}
+}
+
+@article{Krathwohl01112002,
+author = {David R. Krathwohl},
+title = {A Revision of Bloom's Taxonomy: An Overview},
+journal = {Theory Into Practice},
+volume = {41},
+number = {4},
+pages = {212--218},
+year = {2002},
+publisher = {Routledge},
+doi = {10.1207/s15430421tip4104\_2},
+}
+
+@article{bloom1956taxonomy,
+  title={Taxonomy of},
+  author={Bloom, Benjamin S and others},
+  journal={Educational Objectives},
+  volume={250},
+  number={2025},
+  pages={3},
+  year={1956}
+}
+
+@inproceedings{pirolli2005sensemaking,
+  title={The sensemaking process and leverage points for analyst technology as identified through cognitive task analysis},
+  author={Pirolli, Peter and Card, Stuart},
+  booktitle={Proceedings of international conference on intelligence analysis},
+  volume={5},
+  number={1},
+  pages={2--4},
+  year={2005},
+  organization={McLean, VA, USA}
+}
+
+@article{hollan2000distributed,
+  author = {Hollan, James and Hutchins, Edwin and Kirsh, David},
+  title = {Distributed cognition: toward a new foundation for human-computer interaction research},
+  journal = {ACM Transactions on Computer-Human Interaction},
+  volume = {7},
+  number = {2},
+  pages = {174--196},
+  year = {2000},
+  doi = {10.1145/353487.353488}
+}
+
+@article{davies2011mind,
+  author = {Davies, Martin},
+  title = {Concept mapping, mind mapping and argument mapping: what are the differences and do they matter?},
+  journal = {Higher Education},
+  volume = {62},
+  number = {3},
+  pages = {279--301},
+  year = {2011},
+  doi = {10.1007/s10734-010-9387-6}
+}
+
+@article{Qin2026AIPP,
+  title={AI Personalization Paradox: Personalized AI Increases Superficial Engagement in Reading while Undermines Autonomy and Ownership in Writing},
+  author={Peinuan Qin and Chi-Lan Yang and Nattapat Boonprakong and Jingzhu Chen and Yugin Tan and Yi-Chieh Lee},
+  journal={ArXiv},
+  year={2026},
+  volume={abs/2601.17846},
+  url={https://api.semanticscholar.org/CorpusID:285050770}
+}
