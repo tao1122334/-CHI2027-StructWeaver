@@ -834,7 +834,7 @@ To validate the reading challenges identified in the formative study and to exam
 
 \subsection{Study Design}
 
-We compared the StructWeaver condition with the Baseline condition, which consisted of a conventional linear chat interface alongside a PDF viewer. Participants completed AI-assisted reading tasks using unfamiliar research papers in both conditions and subsequently wrote a summary describing their understanding of each paper. We selected unfamiliar topics to reduce the influence of prior domain knowledge and encourage participants to rely on both AI-generated interpretations and the original source during reading.
+We compared the StructWeaver condition with the Baseline condition, which consisted of a conventional linear chat interface alongside a PDF viewer. Participants completed AI-assisted reading tasks on two unfamiliar HCI research papers---\textit{Why Johnny Can't Prompt}~\cite{Zamfirescu-Pereira} and \textit{Synthetic Lies}~\cite{synthetic_lies}---and subsequently wrote a summary describing their understanding of each paper. We selected these papers because they are long-form CHI contributions outside most participants' primary research niches, reducing reliance on prior domain knowledge and encouraging coordination between AI-generated interpretations and the source text. Paper--condition assignment was counterbalanced together with interface order. Before the main tasks, eligibility for AI-assisted long-text reading was checked using a pool of additional HCI papers on dialogue agents, sensemaking, scholarly synthesis, and related topics (Appendix~\ref{appendix:study-materials}). Participants worked at their own pace; reading a paper typically took on the order of 15--35 minutes before writing the summary.
 
 Each participant completed one reading task in the StructWeaver condition and one in the Baseline condition, with condition order counterbalanced across participants. Before using each interface, participants received a tutorial introducing its primary interactions. During each task, participants read the assigned paper with AI assistance and determined how to allocate their attention between AI-generated content and the source document. They then wrote a summary based on their understanding of the paper, completed a post-task questionnaire, and participated in a semi-structured interview reflecting on their reading process and experience. We collected screen recordings, written summaries, questionnaire responses, and post-task interview data for subsequent analysis.
 
@@ -1159,6 +1159,46 @@ In this paper, we present StructWeaver, an interactive AI-assisted reading syste
 \bibliography{sample-base,related_work}
 
 \appendix
+
+\section{Study Materials}
+\label{appendix:study-materials}
+
+\subsection{Main Task Papers}
+Each participant read one of the following CHI papers under StructWeaver and the other under Baseline (assignment counterbalanced with interface order):
+\begin{itemize}[leftmargin=*, noitemsep]
+  \item \textit{Why Johnny Can't Prompt: How Non-AI Experts Try (and Fail) to Design LLM Prompts}~\cite{Zamfirescu-Pereira}
+  \item \textit{Synthetic Lies: Understanding AI-Generated Misinformation and Evaluating Algorithmic and Human Solutions}~\cite{synthetic_lies}
+\end{itemize}
+
+\subsection{Eligibility Screening Corpus}
+Prior to the main tasks, we used an HCI-oriented paper pool to confirm that participants could engage in AI-assisted long-form reading. The pool emphasized dialogue agents, sensemaking, scholarly synthesis, visual programming, and related HCI topics. Titles included:
+\begin{itemize}[leftmargin=*, noitemsep]
+  \item Towards Lifelong Dialogue Agents via Timeline-based Memory Management
+  \item Selenite: Scaffolding Online Sensemaking with Comprehensive Overviews Elicited from Large Language Models
+  \item Structuring Knowledge with Cognitive Maps and Cognitive Graphs
+  \item Spellburst: A Node-based Interface for Exploratory Creative Coding with Natural Language Prompts
+  \item Synergi: A Mixed-Initiative System for Scholarly Synthesis and Sensemaking~\cite{Synergi}
+  \item The Story in the Notebook: Exploratory Data Science using a Literate Programming Tool
+  \item The evaluation of argument mapping as a learning tool: Comparing the effects of map reading versus text reading on comprehension and recall of arguments~\cite{DWYER201016}
+  \item Threddy: An Interactive System for Personalized Thread-based Exploration and Organization of Scientific Literature~\cite{threddy}
+  \item Towards an instrument for measuring sensemaking and an assessment of its theoretical features
+  \item mage: Fluid Moves Between Code and Graphical Work in Computational Notebooks
+  \item PaperWeaver: Enriching Topical Paper Alerts by Contextualizing Recommended Papers with User-collected Papers
+  \item Patterns of Hypertext-Augmented Sensemaking
+  \item Positional Control in Node-Based Programming
+  \item Opening up the black box of scholarly synthesis: Intermediate products, processes, and tools
+  \item Relatedly: Scaffolding Literature Reviews with Existing Related Work Sections
+  \item ScholarMate: A Mixed-Initiative Tool for Qualitative Knowledge Work and Information Sensemaking
+  \item Leveraging Large Language Models for Realizing Truly Intelligent User Interfaces
+  \item A Similarity Measure for Comparing Conversational Dynamics
+  \item Closing the Loop: Learning to Generate Writing Feedback via Language Model Simulated Student Revisions
+  \item Developing a Model of Distributed Sensemaking: A Case Study of Military Analysis
+  \item Rapsai: Accelerating Machine Learning Prototyping of Multimedia Applications through Visual Programming
+  \item Effects of Implicit Sharing in Collaborative Analysis
+  \item eRevise+RF: A Writing Evaluation System for Assessing Student Essay Revisions and Providing Formative Feedback
+  \item Graphologue: Exploring Large Language Model Responses with Interactive Diagrams~\cite{graphologue}
+  \item Interactive Visual Analytics for Sensemaking with Big Text
+\end{itemize}
 
 \section{Core System Algorithms}
 \label{sec:appendix-algorithms}
