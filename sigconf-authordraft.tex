@@ -824,6 +824,7 @@ Overall, 92.9\% of valid gist nodes retained evidence that either fully supporte
 
 
 \section{Evaluation Study}
+\label{sec:evaluation}
 \label{sec:user-study}
 
 We conducted a within-subjects study to investigate how StructWeaver changes AI-assisted reading compared with a conventional chat-and-PDF workflow. Because StructWeaver is designed primarily to change how readers coordinate AI-generated abstractions with source evidence, we focused on observable reading processes and used subjective experience and summary quality to examine the consequences of these behavioral changes. Specifically, we asked: \textbf{RQ1:} How does StructWeaver affect how readers coordinate AI-generated gist and source evidence during reading? \textbf{RQ2:} How do these changes affect readers' reading outcomes and subjective experiences?
@@ -843,7 +844,16 @@ Each participant completed one reading task in the StructWeaver condition and on
 We evaluated StructWeaver along three complementary dimensions: reading behavior, subjective experience, and summary quality.
 
 \paragraph{Reading Behavior.}
-To examine how participants coordinated AI-generated interpretations and source evidence (RQ1), we drew on established procedures for coding and quantifying recorded qualitative data~\cite{chi1997quantifying}. Two authors independently examined the screen recordings and coded participants' observable reading actions. The coding scheme captured six categories of activity: \textit{summarization/compression}, \textit{understanding/explanation}, \textit{source reading}, \textit{source grounding}, \textit{example/association}, and \textit{conversation management}. We define \textit{source grounding} as an action that explicitly reconnects an AI-generated interpretation with source evidence, such as navigating from a gist node to its original passage, comparing an AI-generated node with linked source sentences, or following source links provided in an AI response. Coding disagreements were discussed until consensus was reached. We compared within-participant action frequencies between the StructWeaver and Baseline conditions using Wilcoxon signed-rank tests, with Holm correction for comparisons across behavioral categories. We further examined screen recordings together with post-task interviews to characterize how participants used Gist--Verbatim traversal during interpretation.
+To examine how participants coordinated AI-generated interpretations and source evidence (RQ1), we drew on established procedures for coding and quantifying recorded qualitative data~\cite{chi1997quantifying}. Three authors watched the screen recordings and coded observable reading actions along each session timeline (Figures~\ref{fig:behavior-timeline} and~\ref{fig:behavior-binned}). Disagreements were resolved through discussion until consensus. The scheme used six mutually exclusive categories aligned with the figure legends:
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Summarization}: requesting a full-document, sectional, or otherwise compressed overview of the paper, or asking the model to shorten or restructure a prior summary;
+    \item \textbf{Understanding}: asking for explanations of concepts, terms, nodes, methods, or argumentative points without primarily seeking compression;
+    \item \textbf{Examples \& Relations}: requesting examples, comparisons, or associations that connect claims, RQs, or parts of the paper;
+    \item \textbf{Chat Management}: returning to prior chat turns, reusing earlier answers, or correcting/clarifying a previous exchange (including reviewing chat history);
+    \item \textbf{Source Reading}: viewing or scrolling the linear PDF as independent reading, not as an immediate follow-through from an AI/node evidence jump;
+    \item \textbf{Source Grounding}: reconnecting an AI-generated interpretation with source evidence---e.g., jumping from a gist node to its linked passage, asking the model for supporting/alignment text, or reading the cited snippet immediately after such a jump.
+\end{itemize}
+We compared within-participant category frequencies between conditions using Wilcoxon signed-rank tests with Holm correction across the six categories. We further examined the recordings together with post-task interviews to characterize how participants used Gist--Verbatim traversal during interpretation.
 
 \paragraph{Subjective Experience.}
 To examine participants' perceived experience under the two workflows (RQ2), we administered a study-specific 11-item post-task questionnaire using 7-point Likert scales. Its design was informed by a differentiated cognitive-load instrument covering intrinsic, extraneous, and germane load~\cite{leppink2013development} and by a global mental-effort item~\cite{paas1992training}; we adapted the wording and response scale to AI-assisted long-text reading. The questionnaire examined cognitive load associated with understanding document logic, maintaining and integrating information, controlling information granularity, organizing document structure, reading with explicit concepts or questions, and overall task effort. Across all 11 study-specific items, Cronbach's $\alpha$ was $.82$. Because responses were paired and ordinal, we compared the StructWeaver and Baseline conditions using Wilcoxon signed-rank tests. Post-task interviews were used to contextualize questionnaire responses and identify why particular interactions increased or reduced perceived effort.
@@ -953,14 +963,14 @@ Behavioral logs showed a clear difference in how participants interacted with AI
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig/compact_behavior_timeline.png}
-\caption{Coded behaviors along the session timeline (real time, 0--100\%; $n=12$). The Baseline condition is shown on the left and the StructWeaver condition on the right. Each row is one participant; colored marks show the approximate session progress at which each behavior occurred. The bottom Overall row semi-transparently overlays all events.}
+\caption{Coded behaviors along the session timeline (real time, 0--100\%; $n=12$). Three authors coded screen recordings into six categories (Summarization, Understanding, Examples \& Relations, Chat Management, Source Reading, Source Grounding; definitions in \S\ref{sec:evaluation} Measures). Baseline is left, StructWeaver right. Each row is one participant; colored marks show approximate session progress when each behavior occurred. The bottom Overall row semi-transparently overlays all events.}
 \label{fig:behavior-timeline}
 \end{figure*}
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig/compact_behavior_timeline_binned.png}
-\caption{Behavior counts in 10\% session bins ($n=12$). Solid lines show per-category means across participants; shaded bands indicate $\pm 1$ SD. Under the StructWeaver condition, source grounding concentrates in the mid-to-late session; under the Baseline condition, summarization/compression more often appears in the first half.}
+\caption{Behavior counts in 10\% session bins ($n=12$; same six-category coding as Figure~\ref{fig:behavior-timeline}). Solid lines show per-category means across participants; shaded bands indicate $\pm 1$ SD. Under StructWeaver, Source Grounding concentrates in the mid-to-late session; under Baseline, Summarization more often appears in the first half.}
 \label{fig:behavior-binned}
 \end{figure*}
 
