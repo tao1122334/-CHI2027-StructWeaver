@@ -837,14 +837,14 @@ To validate the reading challenges identified in the formative study and to exam
 
 \subsection{Study Design}
 
-We compared the StructWeaver condition with the Baseline condition, which consisted of a conventional linear chat interface alongside a PDF viewer (Figure~\ref{fig:study-interfaces}, left). In Baseline, participants used a chat-based LLM of their own choice (e.g., ChatGPT or DeepSeek) that they already used routinely; Figure~\ref{fig:study-interfaces} shows a representative Baseline workflow rather than a single mandated client. Participants completed AI-assisted reading tasks on two unfamiliar HCI research papers---\textit{Why Johnny Can't Prompt}~\cite{Zamfirescu-Pereira} and \textit{Synthetic Lies}~\cite{synthetic_lies}---and subsequently wrote a summary describing their understanding of each paper. We selected these papers because they are long-form CHI contributions outside most participants' primary research niches, reducing reliance on prior domain knowledge and encouraging coordination between AI-generated interpretations and the source text. Paper--condition assignment was counterbalanced together with interface order. Before the main tasks, eligibility for AI-assisted long-text reading was checked using a pool of additional HCI papers on dialogue agents, sensemaking, scholarly synthesis, and related topics (Appendix~\ref{appendix:study-materials}). Participants worked at their own pace; reading a paper typically took on the order of 15--35 minutes before writing the summary. Appendix~\ref{appendix:walkthrough} reconstructs an illustrative participant session from screen recordings and debrief.
+We compared the StructWeaver condition with the Baseline condition, which consisted of ChatGPT alongside a PDF viewer (Figure~\ref{fig:study-interfaces}, left). Participants completed AI-assisted reading tasks on two unfamiliar HCI research papers---\textit{Why Johnny Can't Prompt}~\cite{Zamfirescu-Pereira} and \textit{Synthetic Lies}~\cite{synthetic_lies}---and subsequently wrote a summary describing their understanding of each paper. We selected these papers because they are long-form CHI contributions outside most participants' primary research niches, reducing reliance on prior domain knowledge and encouraging coordination between AI-generated interpretations and the source text. Paper--condition assignment was counterbalanced together with interface order. Before the main tasks, eligibility for AI-assisted long-text reading was checked using a pool of additional HCI papers on dialogue agents, sensemaking, scholarly synthesis, and related topics (Appendix~\ref{appendix:study-materials}). Participants worked at their own pace; reading a paper typically took on the order of 15--35 minutes before writing the summary. Appendix~\ref{appendix:walkthrough} reconstructs an illustrative participant session from screen recordings and debrief.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.44\textwidth]{fig/baseline.png}
 \hfill
 \includegraphics[width=0.52\textwidth]{fig/system.png}
-\caption{Study interfaces shown to participants. \textbf{Left (Baseline):} a participant's habitual chat-based LLM alongside a PDF viewer (representative screenshot); AI responses and source text remain in separate panes. \textbf{Right (StructWeaver):} hierarchical node workspace with gist--verbatim alignment, verbatim panel, and AI response panel.}
+\caption{Study interfaces shown to participants. \textbf{Left (Baseline):} ChatGPT alongside a PDF viewer; AI responses and source text remain in separate panes. \textbf{Right (StructWeaver):} hierarchical node workspace with gist--verbatim alignment, verbatim panel, and AI response panel.}
 \label{fig:study-interfaces}
 \end{figure*}
 
@@ -1259,7 +1259,7 @@ The following vignette reconstructs one participant's session (P08; materials-sc
 \subsection{Baseline: \textit{Why Johnny Can't Prompt}}
 
 \paragraph{Workflow.}
-P08 opened the assigned PDF and provided it to a familiar commercial chat LLM, then requested a plain-language overview organized around background, problem, methods, findings, and contributions. The model returned a multi-section summary that made the paper's scope legible at a high level.
+P08 opened the assigned PDF in the viewer and provided the paper to ChatGPT, then requested a plain-language overview organized around background, problem, methods, findings, and contributions. The model returned a multi-section summary that made the paper's scope legible at a high level.
 
 \paragraph{Linear follow-up.}
 P08 continued in the same chat thread with clarifying questions---for example, what \textit{probe} meant in the paper's HCI sense, why BotDesigner was described as a ``half-finished'' research tool rather than a polished product, and how non-experts ``opportunistically'' patched prompts after each bot failure. Each answer extended the conversation downward, mixing accurate explanations with paraphrases that were increasingly detached from specific source sentences.
