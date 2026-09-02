@@ -146,7 +146,7 @@
 
 
 \begin{abstract}
-We investigated how readers verify AI-generated interpretations during long-form reading and identified difficulties in maintaining recoverable relationships between AI abstractions and source evidence. We present StructWeaver, an interactive AI-assisted reading system that supports decomposable gist representations, direct Gist--Verbatim traversal, and persistent interpretation paths. A paired within-subjects study with 12 participants showed that StructWeaver shifted AI-assisted reading from repeated summary consumption toward source grounding. Participants used linked evidence to inspect AI interpretations, identify incomplete support, and repair misalignment with author arguments, while reporting lower coordination burden and greater engagement in organizing and integrating information. Our findings highlight reversible abstraction as a design direction for verifiable AI-assisted reading.
+We investigated how students and knowledge workers verify AI-generated interpretations when reading unfamiliar academic papers and identified difficulties in maintaining recoverable relationships between AI abstractions and source evidence. We present StructWeaver, an interactive AI-assisted reading system that supports decomposable gist representations, direct Gist--Verbatim traversal, and persistent interpretation paths. A paired within-subjects study with 12 enrolled students reading two unfamiliar HCI papers showed that StructWeaver shifted AI-assisted reading from repeated summary consumption toward source grounding. Participants used linked evidence to inspect AI interpretations, identify incomplete support, and repair misalignment with author arguments, while reporting lower coordination burden and greater engagement in organizing and integrating information. Our findings highlight reversible abstraction as a design direction for verifiable AI-assisted reading.
 \end{abstract}
 
 
@@ -209,15 +209,15 @@ We investigated how readers verify AI-generated interpretations during long-form
 
 \section{Introduction}
 
-Large language models (LLMs) are increasingly used to support long-form reading by generating on-demand summaries, explanations, and synthesized interpretations of source documents~\cite{semantic_reader,qlarify,concepteva,realitysummary}. This capability allows readers to quickly establish an initial understanding without reading every passage in detail. However, fluent summaries can also introduce a less visible problem: different AI-generated abstractions of the same document may foreground different arguments, contributions, or implications. For example, when several LLMs summarize the same research paper, one may emphasize the evaluated system, another the observed user behavior, and another the broader design implications. None of these interpretations is necessarily factually incorrect, yet each directs the reader along a different interpretive path~\cite{tversky1981framing,pastorino2025framing,alessa2025quantifying}. The challenge is therefore not only whether an AI-generated statement is correct, but whether readers can recover how a particular abstraction relates to the source material from which it was constructed~\cite{papertrail,kambhamettu2024traceabletextdeepeningreading}.
+Large language models (LLMs) are increasingly used by students and knowledge workers to enter unfamiliar research papers and other long-form documents, generating on-demand summaries, explanations, and synthesized interpretations~\cite{semantic_reader,qlarify,concepteva,realitysummary}. This capability allows readers to quickly establish an initial understanding without reading every passage in detail. However, fluent summaries can also introduce a less visible problem: different AI-generated abstractions of the same document may foreground different arguments, contributions, or implications. For example, when several LLMs summarize the same research paper, one may emphasize the evaluated system, another the observed user behavior, and another the broader design implications. None of these interpretations is necessarily factually incorrect, yet each directs the reader along a different interpretive path~\cite{tversky1981framing,pastorino2025framing,alessa2025quantifying}. The challenge is therefore not only whether an AI-generated statement is correct, but whether readers can recover how a particular abstraction relates to the source material from which it was constructed~\cite{papertrail,kambhamettu2024traceabletextdeepeningreading}.
 
 Existing AI-assisted reading systems have substantially improved how readers access and inspect long documents~\cite{semantic_reader,scholarphi,paper_plain}. Overview systems provide adaptive summaries and explanations~\cite{qlarify,concepteva,abstractexplorer}, provenance-oriented systems expose supporting passages or citations~\cite{papertrail,tabletale,kambhamettu2024traceabletextdeepeningreading}, and sensemaking tools help readers externalize and organize information~\cite{liquidtext,sensecape,pirolli2005sensemaking}. Nevertheless, these capabilities are usually addressed separately. Fine-grained provenance can link generated summaries to source text, but such links are rarely integrated with a persistent inquiry structure that readers can recover and extend. This separation becomes particularly consequential when the AI's organization of a document differs from the author's argument or the reader's own emerging understanding. We therefore focus on a structural gap in current AI-assisted reading workflows: integrating fine-grained abstraction--evidence links with a persistent path for moving among AI-generated gist, source evidence, and the reader's evolving inquiry.
 
-To understand how this gap affects verification in practice, we conducted a formative interview study with 12 participants who regularly used AI tools for long-form reading and knowledge work. We found that participants were not generally unwilling to verify AI-generated content; instead, verification became difficult to sustain as readers had to maintain relationships among AI interpretations, source evidence, and their own evolving understanding~\cite{verification_burden_slr_iui,supporting_or_hindering_chi26}. Three recurring breakdowns emerged. First, monolithic AI-generated responses made it difficult to establish stable interpretive anchors for further inspection. Second, readers had to manually reconstruct correspondence between AI explanations and source passages across disconnected interfaces. Third, linear conversations made previous interpretive paths difficult to recover after readers returned to the source or pursued other questions~\cite{ai_chains,threddy}. These findings suggest that supporting verification requires not only providing evidence, but also preserving the relationships through which readers move between abstraction and evidence.
+To understand how this gap affects verification in practice, we conducted a formative interview study with 12 participants who regularly used AI to read academic papers and related long-form materials for coursework or research. We found that participants were not generally unwilling to verify AI-generated content; instead, verification became difficult to sustain as readers had to maintain relationships among AI interpretations, source evidence, and their own evolving understanding~\cite{verification_burden_slr_iui,supporting_or_hindering_chi26}. Three recurring breakdowns emerged. First, monolithic AI-generated responses made it difficult to establish stable interpretive anchors for further inspection. Second, readers had to manually reconstruct correspondence between AI explanations and source passages across disconnected interfaces. Third, linear conversations made previous interpretive paths difficult to recover after readers returned to the source or pursued other questions~\cite{ai_chains,threddy}. These findings suggest that supporting verification requires not only providing evidence, but also preserving the relationships through which readers move between abstraction and evidence.
 
 Based on these findings, we present \textit{StructWeaver} (Figure~\ref{fig:teaser}), an interactive AI-assisted reading system designed to make AI-generated abstractions traversable. Building on prior phrase-level summary--source linking~\cite{kambhamettu2024traceabletextdeepeningreading}, StructWeaver introduces \textit{Gist--Verbatim alignment} as a persistent reading structure that decomposes generated gist into smaller, revisitable units and associates each unit with order-preserving source evidence. The system provides three forms of support corresponding to the breakdowns identified in our formative study. First, a hierarchical node workspace draws on visual diagramming to externalize AI-generated gist as decomposable interpretive units rather than monolithic responses~\cite{graphologue,sensecape}. Second, explicit Gist--Verbatim correspondence allows readers to move directly between an abstraction and its associated source passages. Third, follow-up questions are attached to persistent interpretation branches rather than appended to a global chat transcript, allowing readers to recover and extend previous lines of inquiry~\cite{ai_chains,threddy}. StructWeaver preserves familiar chat-and-PDF interactions while reorganizing them around the relationships among AI interpretations, author arguments, and readers' evolving understanding.
 
-We further conducted a paired within-subjects study with 12 participants to compare the StructWeaver condition with a conventional linear chat-and-PDF workflow. Behavioral logs showed that the StructWeaver condition shifted participants' interactions away from repeated summarization and compression and toward source grounding: participants more frequently traversed from generated gist to source passages during ordinary reading. They used these transitions to inspect how AI compressed the source, notice potentially incomplete support, and repair mismatches between AI-generated interpretations and author arguments. Questionnaire results further showed lower intrinsic and extraneous load and higher germane load in the StructWeaver condition~\cite{sweller2011cognitive}, suggesting that reducing the effort required to coordinate disconnected representations allowed participants to devote more effort to organizing and integrating the material. Our descriptive summary-quality evaluation showed no stable participant-level system advantage, while pooled-triple $\chi^2$ associations depended on which author applied the same triple procedure.
+We further conducted a paired within-subjects study with 12 enrolled students who used AI to read two unfamiliar HCI research papers under both StructWeaver and a conventional linear chat-and-PDF workflow. Behavioral logs showed that the StructWeaver condition shifted participants' interactions away from repeated summarization and compression and toward source grounding: participants more frequently traversed from generated gist to source passages during ordinary reading. They used these transitions to inspect how AI compressed the source, notice potentially incomplete support, and repair mismatches between AI-generated interpretations and author arguments. Questionnaire results further showed lower intrinsic and extraneous load and higher germane load in the StructWeaver condition~\cite{sweller2011cognitive}, suggesting that reducing the effort required to coordinate disconnected representations allowed participants to devote more effort to organizing and integrating the material. Our descriptive summary-quality evaluation showed no stable participant-level system advantage, while pooled-triple $\chi^2$ associations depended on which author applied the same triple procedure.
 
 In summary, this paper makes three contributions:
 \begin{itemize}[leftmargin=*, noitemsep]
@@ -833,7 +833,7 @@ We conducted a within-subjects study to investigate how StructWeaver changes AI-
 
 \subsection{Participants}
 
-To validate the reading challenges identified in the formative study and to examine the effectiveness of StructWeaver, we recruited a new group of 12 participants (P01--P12; 7 male, 5 female; $M_{\mathrm{age}}=21.62$, $SD=3.15$), distinct from the formative interviewees (T01--T12). All participants were currently enrolled students who routinely needed to read academic literature. Their educational backgrounds included seven bachelor's students, four master's students, and one doctoral student. Disciplines spanned computer science ($n=6$) as well as mathematics, biomedicine, materials science, biological science, basic medicine, and automation engineering. Eligibility required regular experience with AI dialogue systems (e.g., chatbots or AI-assisted tools) and with long-form reading such as academic papers or textbooks; diversity in the sample therefore came primarily from educational stage and disciplinary background rather than from mixing novice and expert AI users. Before the main reading tasks, each participant completed a nine-item pre-task questionnaire on AI reading habits and verification tendencies (Appendix~\ref{appendix:pretest-survey}); raw responses appear in Table~\ref{tab:pretest_responses}.
+To validate the reading challenges identified in the formative study and to examine the effectiveness of StructWeaver, we recruited a new group of 12 participants (P01--P12; 7 male, 5 female; $M_{\mathrm{age}}=21.62$, $SD=3.15$), distinct from the formative interviewees (T01--T12). All participants were currently enrolled students who routinely needed to read academic literature outside their immediate research specialties. Their educational backgrounds included seven bachelor's students, four master's students, and one doctoral student. Disciplines spanned computer science ($n=6$) as well as mathematics, biomedicine, materials science, biological science, basic medicine, and automation engineering. Eligibility required regular experience with AI dialogue systems (e.g., chatbots or AI-assisted tools) and with reading unfamiliar academic papers or textbooks using AI; diversity in the sample therefore came primarily from educational stage and disciplinary background rather than from mixing novice and expert AI users. Before the main reading tasks, each participant completed a nine-item pre-task questionnaire on AI reading habits and verification tendencies (Appendix~\ref{appendix:pretest-survey}); raw responses appear in Table~\ref{tab:pretest_responses}. Appendix~\ref{appendix:probe-profiles} summarizes individualized probe profiles that contextualize how pre-task verification habits related to observed reading behavior.
 
 \subsection{Study Design}
 
@@ -1044,7 +1044,7 @@ Questionnaire responses showed that the behavioral differences observed in the S
 
 \subsubsection{Lower Intrinsic and Extraneous Load}
 
-Participants reported lower intrinsic load in the StructWeaver condition ($M=2.50$) than in the Baseline condition ($M=3.69$; $\Delta=-1.19$, $p=.026$, $d=-0.74$). Extraneous load similarly decreased from $M=3.44$ in the Baseline condition to $M=2.50$ in the StructWeaver condition ($\Delta=-0.94$, $p=.011$, $d=-0.87$). Item-level results provide additional context for these differences (Table~\ref{tab:survey_stats}). Participants reported less difficulty understanding document logic and causal relationships (Q1, $p=.016$), less need to repeatedly adjust the granularity of presented information (Q6, $p=.027$), and lower overall task effort (Q11, $p=.008$). Difficulty maintaining and processing information showed a marginal difference favoring the StructWeaver condition (Q3, $p=.059$), while Q2, Q4, Q5, and Q7 did not reach statistical significance.
+Participants reported lower intrinsic load in the StructWeaver condition ($M=2.50$) than in the Baseline condition ($M=3.69$; $\Delta=-1.19$, $p=.026$, $d=-0.74$). Extraneous load similarly decreased from $M=3.44$ in the Baseline condition to $M=2.50$ in the StructWeaver condition ($\Delta=-0.94$, $p=.011$, $d=-0.87$). Item-level results provide additional context for these differences (Table~\ref{tab:survey_stats}); complete per-participant scores for all 11 items appear in Appendix Tables~\ref{tab:clt_structweaver} and~\ref{tab:clt_baseline}, and Appendix~\ref{appendix:clt-inferential} describes the Wilcoxon signed-rank procedure and full inferential statistics. Participants reported less difficulty understanding document logic and causal relationships (Q1, $p=.016$), less need to repeatedly adjust the granularity of presented information (Q6, $p=.027$), and lower overall task effort (Q11, $p=.008$). Difficulty maintaining and processing information showed a marginal difference favoring the StructWeaver condition (Q3, $p=.059$), while Q2, Q4, Q5, and Q7 did not reach statistical significance.
 
 \begin{table}[t]
 \centering
@@ -1486,6 +1486,37 @@ $SD$ & 1.62 & 1.30 & 0.95 & 1.67 & 1.73 & 1.56 & 1.24 & 1.44 & 0.67 & 0.84 & 1.4
 \end{tabular}
 \end{table*}
 
+\section{Participant Probe Profiles}
+\label{appendix:probe-profiles}
+
+We analyzed each participant as a \emph{behavioral probe} rather than as an independent efficacy datapoint: StructWeaver exposed how pre-task verification habits, trust attitudes, and prior AI-reading workflows interacted with the two interfaces. Table~\ref{tab:probe_profiles} summarizes one-line profiles for P01--P12. \textbf{Verification Habit (VH)} is the pre-task composite in Table~\ref{tab:pretest_responses}. \textbf{SW grounding} counts Source Grounding events in the StructWeaver session (jumping from gist nodes to linked source passages or verification-oriented reading immediately after such a jump; see \S\ref{sec:evaluation} Measures). These profiles contextualized exploratory case analyses and post-task interviews but were not used as primary inferential outcomes.
+
+\begin{table*}[t]
+\centering
+\caption{Participant probe profiles ($n=12$). Profiles characterize individualized reading--verification patterns under StructWeaver and Baseline; they are descriptive case summaries, not condition-level efficacy scores.}
+\label{tab:probe_profiles}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{l l c c X}
+\toprule
+\textbf{ID} & \textbf{Profile type} & \textbf{VH} & \textbf{SW grounding} & \textbf{Summary (attitude--behavior tension)} \\
+\midrule
+P01 & Schema-trust / slot-checking & 4.67 & 0 & Uses bg/RQ/contribution templates; modular nodes feel faster and more reliable, yet log shows no grounding and summary hallucination remains elevated. \\
+P02 & Pre-read + co-control & 5.33 & 0 & Enters SW after already reading the source; fine-grained nodes support in-place child-note questioning rather than alignment-driven verification. \\
+P03 & High dependence / concept-driven & 4.67 & 1 & AI-first entry with mind-map scaffold aiding closed-book summary recall; verification is reference-style reread, not dense grounding. \\
+P04 & Self-reading / high-level classification & 4.00 & 6 & Baseline is mostly direct PDF reading; SW high-level categories with attached source feel trustworthy, though concept-driven reading (Q9) remains low. \\
+P05 & High trust / close-reading adjustment & 3.00 & 8 & Trusts gist outputs during overview; verification occurs during close reading, tree adjustment, and mapping repair rather than during gist consumption. \\
+P06 & Continuous claim-check & 4.67 & 8 & Same VH as P01 but eight grounding events; enjoys checking nodes against source yet finds verification slow and effortful when mappings fail. \\
+P07 & High output-trust / path-triggered & 3.67 & 6 & Reports not checking AI outputs yet shows grounding in logs---embedded paths change behavior more than stated verification attitude. \\
+P08 & Plausible-then-skip & 4.00 & 2 & Skips verification when outputs seem plausible; link presence increases trust without frequent grounding despite high system satisfaction. \\
+P09 & Split-pane friction & 5.67 & 0 & Baseline chat+PDF feels fragmented and distracting; deep reading in Baseline contrasts with minimal StructWeaver interaction in logs. \\
+P10 & Interface-led grounding & 5.67 & 9 & Self-reported verification habits are moderate, yet logs show the most grounding events---embedded paths pull the reader back to source without a stated attitude shift. \\
+P11 & High VH / low trust / heuristic check & 5.67 & 5 & Willing to verify but Baseline friction prevents grounding; StructWeaver makes heuristic ``check as inspiration'' behavior easier to perform. \\
+P12 & Verbatim-comparison preference & 4.00 & 9 & Rarely uses AI in Baseline and prefers side-by-side reading; StructWeaver aligns with an existing compare-against-source workflow (nine grounding events). \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
 \section{Cognitive Load Questionnaire (Long-text Reading Version)}
 
 Participants responded to the following items on a 7-point Likert scale 
@@ -1525,6 +1556,113 @@ Reflects the overall perceived effort of the task.
  \item Overall, I found this task mentally effortful.
 \end{enumerate}
 
+\subsection{Inferential Analysis}
+\label{appendix:clt-inferential}
+
+The cognitive load comparisons reported in the Findings section (Table~\ref{tab:survey_stats}) were computed from the paired post-task responses in Tables~\ref{tab:clt_structweaver} and~\ref{tab:clt_baseline}. Each participant completed both the StructWeaver and Baseline reading sessions. For each item $q \in \{1,\ldots,11\}$ and each participant $i$, we formed within-participant differences $\Delta_{iq} = \text{StructWeaver}_{iq} - \text{Baseline}_{iq}$.
+
+\textbf{Item-level tests.} Because responses were ordinal 7-point Likert ratings and $n=12$, we tested each item with two-sided \textbf{Wilcoxon signed-rank tests} on the paired differences. Ties ($\Delta_{iq}=0$) were handled with Pratt's zero correction (\texttt{scipy.stats.wilcoxon}, \texttt{zero\_method='pratt'}). We did \emph{not} apply Holm correction across the 11 item tests; they are reported as decompositions of the dimension-level effects.
+
+\textbf{Dimension-level tests.} Composite scores were computed per participant as: intrinsic load = mean(Q1--Q3); extraneous load = mean(Q4--Q6); germane load = mean(Q7--Q10). Q11 (overall task effort) was analyzed as a separate item. Condition means in the main text are arithmetic means of these per-participant composites (e.g., intrinsic load: StructWeaver $M=2.50$ vs.\ Baseline $M=3.69$). Dimension comparisons used two-sided \textbf{paired $t$-tests} on the composite difference scores ($df=11$).
+
+\textbf{Effect size.} We report paired Cohen's $d_z = M(\Delta)/SD(\Delta)$ for every item and composite. For negatively framed items (Q1--Q6 and Q11), lower scores are favorable, so negative $d_z$ indicates improvement under StructWeaver; for positively framed items (Q7--Q10), higher scores are favorable, so positive $d_z$ indicates improvement.
+
+\textbf{Significance reporting.} We used $\alpha=.05$ (two-sided) and mark $^{*}\,p<.05$, $^{**}\,p<.01$, and $\dagger$ marginal trends ($p<.06$) as in Table~\ref{tab:survey_stats}. Table~\ref{tab:clt_inferential} lists the complete inferential results.
+
+\begin{table*}[t]
+\centering
+\caption{Inferential statistics for post-task cognitive load questionnaire scores ($n=12$ paired participants). StructWeaver and Baseline means ($M$) are computed from Appendix Tables~\ref{tab:clt_structweaver} and~\ref{tab:clt_baseline}; $\Delta M = M_{\text{StructWeaver}} - M_{\text{Baseline}}$. Item-level $p$-values are from Wilcoxon signed-rank tests (Pratt zero correction); composite $p$-values are from paired $t$-tests.}
+\label{tab:clt_inferential}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l l r r r r r l}
+\toprule
+\textbf{Measure} & \textbf{Framing} & \textbf{$M_{\text{SW}}$} & \textbf{$M_{\text{BL}}$} & \textbf{$\Delta M$} & \textbf{$d_z$} & \textbf{$p$} & \textbf{Sig.} \\
+\midrule
+Q1 & Negative & 2.17 & 3.67 & $-$1.50 & $-$0.89 & .016 & $^{*}$ \\
+Q2 & Negative & 2.83 & 3.33 & $-$0.50 & $-$0.22 & .490 & \\
+Q3 & Negative & 2.50 & 4.08 & $-$1.58 & $-$0.70 & .059 & $\dagger$ \\
+Q4 & Negative & 2.17 & 3.33 & $-$1.17 & $-$0.59 & .125 & \\
+Q5 & Negative & 2.25 & 2.50 & $-$0.25 & $-$0.17 & .320 & \\
+Q6 & Negative & 3.08 & 4.50 & $-$1.42 & $-$0.63 & .027 & $^{*}$ \\
+Q7 & Positive & 4.92 & 4.00 & $+$0.92 & $+$0.57 & .125 & \\
+Q8 & Positive & 5.08 & 4.08 & $+$1.00 & $+$0.74 & .049 & $^{*}$ \\
+Q9 & Positive & 5.00 & 3.25 & $+$1.75 & $+$1.23 & .002 & $^{**}$ \\
+Q10 & Positive & 5.83 & 3.58 & $+$2.25 & $+$1.21 & .006 & $^{**}$ \\
+Q11 & Negative & 2.33 & 4.17 & $-$1.83 & $-$0.97 & .008 & $^{**}$ \\
+\midrule
+Intrinsic (Q1--Q3) & Composite & 2.50 & 3.69 & $-$1.19 & $-$0.74 & .026 & $^{*}$ \\
+Extraneous (Q4--Q6) & Composite & 2.50 & 3.44 & $-$0.94 & $-$0.87 & .011 & $^{*}$ \\
+Germane (Q7--Q10) & Composite & 5.21 & 3.73 & $+$1.48 & $+$1.85 & $<$.001 & $^{**}$ \\
+\bottomrule
+\end{tabular}
+\\[4pt]
+\footnotesize{$^{*}\,p<.05$, $^{**}\,p<.01$, $\dagger$ marginal ($p<.06$).}
+\end{table*}
+
+\subsection{Post-Task Response Data}
+\label{appendix:posttask-clt}
+
+Tables~\ref{tab:clt_structweaver} and~\ref{tab:clt_baseline} report post-task cognitive load questionnaire responses for the StructWeaver and Baseline conditions, respectively ($n=12$ each; 7-point Likert). Item numbers Q1--Q11 correspond to the numbered items above: Q1--Q3 index intrinsic load, Q4--Q6 extraneous load, Q7--Q10 germane load, and Q11 overall task effort. The main text reports inferential tests for significant and marginal items only (Table~\ref{tab:survey_stats}); full per-participant scores are provided here for transparency.
+
+\begin{table*}[t]
+\centering
+\caption{Post-task cognitive load questionnaire responses in the StructWeaver condition ($n=12$; 7-point Likert). Q1--Q3: intrinsic load; Q4--Q6: extraneous load; Q7--Q10: germane load; Q11: overall effort. $M$ and $SD$ appear in the bottom rows.}
+\label{tab:clt_structweaver}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccccccccc}
+\toprule
+\textbf{ID} & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} & \textbf{Q4} & \textbf{Q5} & \textbf{Q6} & \textbf{Q7} & \textbf{Q8} & \textbf{Q9} & \textbf{Q10} & \textbf{Q11} \\
+\midrule
+P01 & 2 & 2 & 3 & 2 & 2 & 2 & 5 & 5 & 5 & 5 & 2 \\
+P02 & 1 & 2 & 2 & 2 & 1 & 2 & 6 & 6 & 6 & 7 & 2 \\
+P03 & 5 & 2 & 1 & 1 & 1 & 4 & 7 & 7 & 7 & 7 & 1 \\
+P04 & 1 & 2 & 3 & 1 & 1 & 3 & 5 & 3 & 1 & 5 & 3 \\
+P05 & 3 & 2 & 3 & 2 & 5 & 2 & 5 & 4 & 3 & 6 & 3 \\
+P06 & 2 & 4 & 2 & 2 & 2 & 2 & 5 & 4 & 5 & 6 & 2 \\
+P07 & 3 & 4 & 3 & 4 & 2 & 5 & 6 & 5 & 5 & 4 & 4 \\
+P08 & 1 & 2 & 2 & 1 & 2 & 3 & 4 & 5 & 4 & 6 & 2 \\
+P09 & 1 & 1 & 1 & 4 & 1 & 6 & 4 & 4 & 6 & 6 & 1 \\
+P10 & 1 & 5 & 3 & 1 & 4 & 2 & 6 & 6 & 6 & 5 & 2 \\
+P11 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 6 & 6 & 7 & 3 \\
+P12 & 3 & 5 & 4 & 3 & 3 & 3 & 3 & 6 & 6 & 6 & 3 \\
+\midrule
+$M$ & 2.17 & 2.83 & 2.50 & 2.17 & 2.25 & 3.08 & 4.92 & 5.08 & 5.00 & 5.83 & 2.33 \\
+$SD$ & 1.21 & 1.28 & 0.87 & 1.07 & 1.23 & 1.26 & 1.19 & 1.11 & 1.58 & 0.90 & 0.85 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Post-task cognitive load questionnaire responses in the Baseline condition ($n=12$; 7-point Likert). Q1--Q3: intrinsic load; Q4--Q6: extraneous load; Q7--Q10: germane load; Q11: overall effort. $M$ and $SD$ appear in the bottom rows.}
+\label{tab:clt_baseline}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccccccccc}
+\toprule
+\textbf{ID} & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} & \textbf{Q4} & \textbf{Q5} & \textbf{Q6} & \textbf{Q7} & \textbf{Q8} & \textbf{Q9} & \textbf{Q10} & \textbf{Q11} \\
+\midrule
+P01 & 3 & 3 & 3 & 4 & 3 & 3 & 3 & 3 & 2 & 3 & 3 \\
+P02 & 2 & 1 & 2 & 2 & 1 & 3 & 6 & 5 & 5 & 3 & 3 \\
+P03 & 4 & 2 & 7 & 7 & 2 & 5 & 4 & 5 & 4 & 3 & 7 \\
+P04 & 6 & 6 & 5 & 1 & 1 & 7 & 1 & 5 & 1 & 2 & 5 \\
+P05 & 5 & 3 & 6 & 2 & 2 & 6 & 2 & 3 & 2 & 5 & 3 \\
+P06 & 5 & 4 & 2 & 2 & 2 & 2 & 6 & 2 & 4 & 2 & 6 \\
+P07 & 3 & 3 & 4 & 4 & 3 & 5 & 6 & 5 & 4 & 5 & 3 \\
+P08 & 4 & 5 & 5 & 5 & 3 & 5 & 4 & 3 & 4 & 6 & 4 \\
+P09 & 3 & 4 & 6 & 4 & 1 & 2 & 4 & 5 & 2 & 2 & 4 \\
+P10 & 1 & 1 & 2 & 3 & 2 & 6 & 6 & 5 & 4 & 5 & 2 \\
+P11 & 3 & 5 & 4 & 3 & 5 & 5 & 3 & 4 & 2 & 5 & 5 \\
+P12 & 5 & 3 & 3 & 3 & 5 & 5 & 3 & 4 & 5 & 2 & 5 \\
+\midrule
+$M$ & 3.67 & 3.33 & 4.08 & 3.33 & 2.50 & 4.50 & 4.00 & 4.08 & 3.25 & 3.58 & 4.17 \\
+$SD$ & 1.37 & 1.49 & 1.66 & 1.55 & 1.32 & 1.55 & 1.63 & 1.04 & 1.30 & 1.44 & 1.40 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
 
 \section{System Impact Evaluation Questionnaire}
 
@@ -1561,6 +1699,40 @@ Participants responded to the following items on a 7-point Likert scale
  \item I am willing to continue using this system in future learning.
  \item I would recommend this system to others who need to read complex materials.
 \end{enumerate}
+
+\subsection{Response Data}
+\label{appendix:system-impact-responses}
+
+Table~\ref{tab:system_impact_responses} reports post-task system impact questionnaire responses collected after the StructWeaver reading session ($n=12$; 7-point Likert). Item numbers Q1--Q12 correspond to the numbered items above: Q1--Q3 index Understand, Q4--Q6 Verify, Q7--Q9 Re-understand, and Q10--Q12 Acceptance and Recommendation. This instrument was administered only after the StructWeaver condition because its items refer explicitly to StructWeaver-specific features (e.g., linked original-text and AI-generated nodes).
+
+\begin{table*}[t]
+\centering
+\caption{Post-task system impact questionnaire responses after the StructWeaver session ($n=12$; 7-point Likert; higher = stronger agreement). Q1--Q3: Understand; Q4--Q6: Verify; Q7--Q9: Re-understand; Q10--Q12: Acceptance and Recommendation. $M$ and $SD$ appear in the bottom rows.}
+\label{tab:system_impact_responses}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccccccccccc}
+\toprule
+\textbf{ID} & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} & \textbf{Q4} & \textbf{Q5} & \textbf{Q6} & \textbf{Q7} & \textbf{Q8} & \textbf{Q9} & \textbf{Q10} & \textbf{Q11} & \textbf{Q12} \\
+\midrule
+P01 & 6 & 6 & 6 & 5 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 \\
+P02 & 7 & 6 & 6 & 6 & 6 & 6 & 7 & 6 & 6 & 6 & 6 & 6 \\
+P03 & 7 & 5 & 6 & 6 & 6 & 5 & 5 & 6 & 4 & 4 & 4 & 7 \\
+P04 & 5 & 6 & 6 & 4 & 2 & 3 & 5 & 1 & 1 & 4 & 4 & 4 \\
+P05 & 6 & 6 & 6 & 4 & 6 & 5 & 6 & 4 & 6 & 5 & 5 & 5 \\
+P06 & 6 & 5 & 6 & 5 & 6 & 6 & 6 & 3 & 3 & 6 & 6 & 5 \\
+P07 & 4 & 6 & 5 & 4 & 3 & 5 & 6 & 4 & 5 & 5 & 6 & 6 \\
+P08 & 6 & 6 & 7 & 7 & 7 & 7 & 7 & 7 & 7 & 7 & 7 & 7 \\
+P09 & 5 & 6 & 4 & 2 & 5 & 5 & 5 & 2 & 4 & 6 & 5 & 6 \\
+P10 & 6 & 6 & 7 & 6 & 6 & 5 & 7 & 6 & 6 & 6 & 7 & 6 \\
+P11 & 7 & 7 & 6 & 6 & 7 & 7 & 7 & 7 & 7 & 7 & 7 & 7 \\
+P12 & 6 & 6 & 3 & 5 & 3 & 6 & 6 & 3 & 6 & 6 & 6 & 6 \\
+\midrule
+$M$ & 5.92 & 5.92 & 5.67 & 5.00 & 5.25 & 5.50 & 6.08 & 4.58 & 5.08 & 5.67 & 5.75 & 5.92 \\
+$SD$ & 0.86 & 0.49 & 1.11 & 1.29 & 1.59 & 1.04 & 0.76 & 1.93 & 1.71 & 0.94 & 1.01 & 0.86 \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
 
 % \section{Data}
