@@ -837,14 +837,14 @@ To validate the reading challenges identified in the formative study and to exam
 
 \subsection{Study Design}
 
-We compared the StructWeaver condition with the Baseline condition, which consisted of a conventional linear chat interface alongside a PDF viewer (Figure~\ref{fig:study-interfaces}, left). Participants completed AI-assisted reading tasks on two unfamiliar HCI research papers---\textit{Why Johnny Can't Prompt}~\cite{Zamfirescu-Pereira} and \textit{Synthetic Lies}~\cite{synthetic_lies}---and subsequently wrote a summary describing their understanding of each paper. We selected these papers because they are long-form CHI contributions outside most participants' primary research niches, reducing reliance on prior domain knowledge and encouraging coordination between AI-generated interpretations and the source text. Paper--condition assignment was counterbalanced together with interface order. Before the main tasks, eligibility for AI-assisted long-text reading was checked using a pool of additional HCI papers on dialogue agents, sensemaking, scholarly synthesis, and related topics (Appendix~\ref{appendix:study-materials}). Participants worked at their own pace; reading a paper typically took on the order of 15--35 minutes before writing the summary.
+We compared the StructWeaver condition with the Baseline condition, which consisted of a conventional linear chat interface alongside a PDF viewer (Figure~\ref{fig:study-interfaces}, left). In Baseline, participants used a chat-based LLM of their own choice (e.g., ChatGPT or DeepSeek) that they already used routinely; Figure~\ref{fig:study-interfaces} shows a representative Baseline workflow rather than a single mandated client. Participants completed AI-assisted reading tasks on two unfamiliar HCI research papers---\textit{Why Johnny Can't Prompt}~\cite{Zamfirescu-Pereira} and \textit{Synthetic Lies}~\cite{synthetic_lies}---and subsequently wrote a summary describing their understanding of each paper. We selected these papers because they are long-form CHI contributions outside most participants' primary research niches, reducing reliance on prior domain knowledge and encouraging coordination between AI-generated interpretations and the source text. Paper--condition assignment was counterbalanced together with interface order. Before the main tasks, eligibility for AI-assisted long-text reading was checked using a pool of additional HCI papers on dialogue agents, sensemaking, scholarly synthesis, and related topics (Appendix~\ref{appendix:study-materials}). Participants worked at their own pace; reading a paper typically took on the order of 15--35 minutes before writing the summary. Appendix~\ref{appendix:walkthrough} reconstructs an illustrative participant session from screen recordings and debrief.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.44\textwidth]{fig/baseline.png}
 \hfill
 \includegraphics[width=0.52\textwidth]{fig/system.png}
-\caption{Study interfaces shown to participants. \textbf{Left (Baseline):} a conventional linear chat interface alongside a PDF viewer; AI responses and source text remain in separate panes. \textbf{Right (StructWeaver):} hierarchical node workspace with gist--verbatim alignment, verbatim panel, and AI response panel.}
+\caption{Study interfaces shown to participants. \textbf{Left (Baseline):} a participant's habitual chat-based LLM alongside a PDF viewer (representative screenshot); AI responses and source text remain in separate panes. \textbf{Right (StructWeaver):} hierarchical node workspace with gist--verbatim alignment, verbatim panel, and AI response panel.}
 \label{fig:study-interfaces}
 \end{figure*}
 
@@ -1250,6 +1250,43 @@ Prior to the main tasks, we used an HCI-oriented paper pool to confirm that part
   \item Graphologue: Exploring Large Language Model Responses with Interactive Diagrams~\cite{graphologue}
   \item Interactive Visual Analytics for Sensemaking with Big Text
 \end{itemize}
+
+\section{Illustrative Reading Walkthrough}
+\label{appendix:walkthrough}
+
+The following vignette reconstructs one participant's session (P08; materials-science graduate) from screen recordings and post-task debrief. P08 read \textit{Why Johnny Can't Prompt} under Baseline and \textit{Synthetic Lies} under StructWeaver (counterbalanced assignment). Coded behavior counts for P08 appear in Table~\ref{tab:behavior_stats}. This case is illustrative rather than representative: P08 showed strong summary-quality gains under StructWeaver despite relatively few source-grounding actions, consistent with a \textit{plausible-then-skip} verification pattern observed in debrief.
+
+\subsection{Baseline: \textit{Why Johnny Can't Prompt}}
+
+\paragraph{Workflow.}
+P08 opened the assigned PDF and provided it to a familiar commercial chat LLM, then requested a plain-language overview organized around background, problem, methods, findings, and contributions. The model returned a multi-section summary that made the paper's scope legible at a high level.
+
+\paragraph{Linear follow-up.}
+P08 continued in the same chat thread with clarifying questions---for example, what \textit{probe} meant in the paper's HCI sense, why BotDesigner was described as a ``half-finished'' research tool rather than a polished product, and how non-experts ``opportunistically'' patched prompts after each bot failure. Each answer extended the conversation downward, mixing accurate explanations with paraphrases that were increasingly detached from specific source sentences.
+
+\paragraph{Verification friction.}
+When the model attached citation-style links or page references, P08 clicked them expecting sentence-level anchors. The links opened the PDF viewer but did not highlight the supporting passage, so P08 could not tell which sentence justified a claim. After a few attempts, P08 stopped following links and relied on whether the explanation ``sounded plausible.'' Screen recordings coded zero source-grounding actions for this session.
+
+\paragraph{Coordination cost and summary.}
+As the thread grew, P08 scrolled repeatedly to recover earlier explanations before continuing. P08 later reported that much of the reading felt ``forgotten'' when starting the closed-book summary. The written summary captured several high-level themes but included unsupported elaborations (Precision $=0.30$; Hallucination rate $=0.40$ for this participant under Baseline; Table~\ref{tab:summary_quality}).
+
+\subsection{StructWeaver: \textit{Synthetic Lies}}
+
+\paragraph{Entry through gist structure.}
+Facing a long COVID-misinformation paper outside her primary domain, P08 first scanned top-level gist nodes to learn \textit{how the study was done} rather than reading linearly from the PDF. Subordinate nodes on the right listed concrete steps---collecting human-written false claims, extracting narrative elements as prompts, generating paired GPT-3 outputs, and comparing detection performance---which P08 browsed before selecting branches of interest.
+
+\paragraph{Gist--verbatim traversal.}
+When a gist node noted differences in \textit{language style} between human- and AI-written misinformation, P08 opened the linked verbatim panel and encountered psycholinguistic terms (e.g., categorical--dynamic index [CDI], clout, authentic tone). Unfamiliar with CDI, P08 asked a path-scoped question on that node; the response explained the construct using the local gist and aligned source sentences. P08 then returned to the active branch by clicking the verbatim or gist node rather than searching a long chat log.
+
+\paragraph{Alternating overview and depth.}
+P08 alternated between map-level overview (confirming where she was in the argument) and localized depth (reading evidence for one sub-claim). Debrief responses characterized this as ``getting the direction right first'' and then selectively checking points she did not understand. Screen recordings coded two source-grounding actions and one node-level understanding request for this session---fewer than some participants, but aligned with P08's stated selective verification habit. At the time of the study, StructWeaver's precomputed structure covered the abstract and introduction of this paper; participants could still open the full PDF when needed.
+
+\paragraph{Outcomes.}
+Relative to Baseline, P08 reported lower intrinsic and extraneous load, higher germane load, and produced a summary with perfect precision and no coded hallucinations (Table~\ref{tab:summary_quality}). This improvement co-occurred with structured gist--verbatim access rather than with intensive line-by-line verification, highlighting that outcome gains and verification intensity can diverge at the participant level.
+
+\subsection{Contrast}
+
+Across the two sessions, the same reader shifted from summary-first consumption with chat-managed clarification (Baseline) to gist-first exploration with recoverable paths back to evidence (StructWeaver). Baseline separated AI paraphrase, PDF location, and memory; StructWeaver linked abstractions to verbatim nodes and preserved branch context for follow-up questions. The vignette therefore instantiates the aggregate behavioral pattern in \S\ref{sec:findings}: decreased summarization/compression, increased (though not uniformly intensive) source grounding, and reduced coordination cost when returning to the text.
 
 \section{Core System Algorithms}
 \label{sec:appendix-algorithms}
