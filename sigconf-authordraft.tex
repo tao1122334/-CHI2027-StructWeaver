@@ -837,7 +837,16 @@ To validate the reading challenges identified in the formative study and to exam
 
 \subsection{Study Design}
 
-We compared the StructWeaver condition with the Baseline condition, which consisted of a conventional linear chat interface alongside a PDF viewer. Participants completed AI-assisted reading tasks on two unfamiliar HCI research papers---\textit{Why Johnny Can't Prompt}~\cite{Zamfirescu-Pereira} and \textit{Synthetic Lies}~\cite{synthetic_lies}---and subsequently wrote a summary describing their understanding of each paper. We selected these papers because they are long-form CHI contributions outside most participants' primary research niches, reducing reliance on prior domain knowledge and encouraging coordination between AI-generated interpretations and the source text. Paper--condition assignment was counterbalanced together with interface order. Before the main tasks, eligibility for AI-assisted long-text reading was checked using a pool of additional HCI papers on dialogue agents, sensemaking, scholarly synthesis, and related topics (Appendix~\ref{appendix:study-materials}). Participants worked at their own pace; reading a paper typically took on the order of 15--35 minutes before writing the summary.
+We compared the StructWeaver condition with the Baseline condition, which consisted of a conventional linear chat interface alongside a PDF viewer (Figure~\ref{fig:study-interfaces}, left). Participants completed AI-assisted reading tasks on two unfamiliar HCI research papers---\textit{Why Johnny Can't Prompt}~\cite{Zamfirescu-Pereira} and \textit{Synthetic Lies}~\cite{synthetic_lies}---and subsequently wrote a summary describing their understanding of each paper. We selected these papers because they are long-form CHI contributions outside most participants' primary research niches, reducing reliance on prior domain knowledge and encouraging coordination between AI-generated interpretations and the source text. Paper--condition assignment was counterbalanced together with interface order. Before the main tasks, eligibility for AI-assisted long-text reading was checked using a pool of additional HCI papers on dialogue agents, sensemaking, scholarly synthesis, and related topics (Appendix~\ref{appendix:study-materials}). Participants worked at their own pace; reading a paper typically took on the order of 15--35 minutes before writing the summary.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.44\textwidth]{fig/baseline.png}
+\hfill
+\includegraphics[width=0.52\textwidth]{fig/system.png}
+\caption{Study interfaces shown to participants. \textbf{Left (Baseline):} a conventional linear chat interface alongside a PDF viewer; AI responses and source text remain in separate panes. \textbf{Right (StructWeaver):} hierarchical node workspace with gist--verbatim alignment, verbatim panel, and AI response panel.}
+\label{fig:study-interfaces}
+\end{figure*}
 
 Each participant completed one reading task in the StructWeaver condition and one in the Baseline condition, with condition order counterbalanced across participants. Before using each interface, participants received a tutorial introducing its primary interactions. During each task, participants read the assigned paper with AI assistance and determined how to allocate their attention between AI-generated content and the source document. They then wrote a summary based on their understanding of the paper, completed a post-task questionnaire, and participated in a semi-structured interview reflecting on their reading process and experience. We collected screen recordings, written summaries, questionnaire responses, and post-task interview data for subsequent analysis.
 
@@ -962,7 +971,7 @@ We present findings from behavioral logs, screen recordings, questionnaires, wri
 \subsection{From Summary Consumption to Source Grounding}
 \label{sec:behavior-logs}
 
-Behavioral logs showed a clear difference in how participants interacted with AI across the two conditions (Figures~\ref{fig:behavior-timeline} and~\ref{fig:behavior-binned}). In the Baseline condition, participants' interactions were largely organized around summarization and compression: they repeatedly asked AI to condense the paper, reformulate sections, or provide compact overviews. In the StructWeaver condition, summarization/compression actions decreased while source-grounding actions increased. Rather than treating AI-generated responses as terminal outputs, participants more frequently traversed between generated gist and corresponding passages in the source document.
+Behavioral logs showed a clear difference in how participants interacted with AI across the two conditions (Figures~\ref{fig:behavior-timeline} and~\ref{fig:behavior-binned}). In the Baseline condition, participants' interactions were largely organized around summarization and compression: they repeatedly asked AI to condense the paper, reformulate sections, or provide compact overviews. In the StructWeaver condition, summarization/compression actions decreased while source-grounding actions increased. Rather than treating AI-generated responses as terminal outputs, participants more frequently traversed between generated gist and corresponding passages in the source document. Wilcoxon signed-rank tests on per-participant category counts ($n=12$; Holm-corrected across six categories; Table~\ref{tab:behavior_stats}) showed significant increases in Source Grounding ($M=6.00$ vs.\ $0.25$; $\Delta=+5.75$, $p=.006$, Holm $p=.029$, $d_z=1.09$) and significant decreases in Summarization ($M=0.00$ vs.\ $2.08$; $\Delta=-2.08$, $p=.004$, Holm $p=.023$, $d_z=-0.84$). Understanding, Examples \& Relations, Chat Management, and Source Reading did not reach significance after Holm correction, although Source Reading directionally decreased ($M=0.42$ vs.\ $1.58$; $p=.188$). Total coded events per session were similar across conditions ($M=8.08$ vs.\ $4.83$; $p=.112$), indicating that the shift was primarily one of \emph{category migration} rather than inflated event counts.
 
 \begin{figure*}[t]
 \centering
@@ -977,6 +986,28 @@ Behavioral logs showed a clear difference in how participants interacted with AI
 \caption{Behavior counts in 10\% session bins ($n=12$; same six-category coding as Figure~\ref{fig:behavior-timeline}). Solid lines show per-category means across participants; shaded bands indicate $\pm 1$ SD. Under StructWeaver, Source Grounding concentrates in the mid-to-late session; under Baseline, Summarization more often appears in the first half.}
 \label{fig:behavior-binned}
 \end{figure*}
+
+\begin{table*}[t]
+\centering
+\caption{Wilcoxon signed-rank tests on coded behavior counts by category ($n=12$ paired participants). Values are mean counts per reading session (standard deviations in parentheses). Holm correction was applied across the six categories; total events per session is reported separately and was not included in the family-wise correction.}
+\label{tab:behavior_stats}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lcccccc}
+\toprule
+Category & Baseline $M$ ($SD$) & StructWeaver $M$ ($SD$) & $\Delta M$ & $d_z$ & $p$ & Holm $p$ \\
+\midrule
+Summarization & 2.08 (2.47) & 0.00 (0.00) & $-$2.08 & $-$0.84 & .004 & .023 \\
+Understanding & 0.50 (0.90) & 1.08 (0.90) & $+$0.58 & 0.59 & .113 & .453 \\
+Examples \& Relations & 0.00 (0.00) & 0.50 (1.00) & $+$0.50 & 0.50 & .250 & .562 \\
+Chat Management & 0.42 (0.79) & 0.08 (0.29) & $-$0.33 & $-$0.38 & .375 & .562 \\
+Source Reading & 1.58 (2.39) & 0.42 (0.67) & $-$1.17 & $-$0.50 & .188 & .562 \\
+Source Grounding & 0.25 (0.62) & 6.00 (5.08) & $+$5.75 & 1.09 & .006 & .029 \\
+\midrule
+Total events & 4.83 (4.39) & 8.08 (6.01) & $+$3.25 & 0.48 & .112 & --- \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
 
 We found source inspection became part of participants' ordinary reading process rather than a separate verification step. In the Baseline condition, participants often obtained an AI response first and then separately decided whether returning to the PDF was necessary. The StructWeaver condition instead allowed participants to move directly from an AI-generated gist node to its corresponding source passage. We observed participants repeatedly using these links while progressing through the paper, often without first expressing explicit doubt about the generated content. 
